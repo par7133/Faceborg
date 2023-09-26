@@ -77,7 +77,9 @@ define('APP_DEF_PROFILE_PIC', "/res/pic1.png");
 define('APP_FILE_MAX_SIZE', 10496000);
 define('APP_BLOG_MAX_POSTS', 15);
 define('APP_PAGINATION', false);
-define('APP_EMAIL_CONTACT', "info@yourpuzzleu.com");
+define('APP_EMAIL_CONTACT', "info@yourfaceborg.com");
+define('APP_CARD_BGCOLORS', ['#e74c57','#e74c3c','#d35400','#f39c12','#f1c40f','#2ecc71','#1abc9c','#3498db','#8e44ad','#512e5f','#154360','#1d3347','#000205','#424344','#FFFFFF']);
+define('APP_CARD_COLORS', ['#000000','#000000','#000000','#000000','#000000','#000000','#000000','#000000','#000000','#FFFFFF','#FFFFFF','#FFFFFF','#FFFFFF','#FFFFFF','#000000']);
 
 $CONFIG = [
 
@@ -127,8 +129,10 @@ LICENSETEXT
       'FILE_MAX_SIZE' => 10496000,
       'BLOG_MAX_POSTS' => 15,
       'PAGINATION' => false,
-      'EMAIL_CONTACT' => "info@yourpuzzleu.com"
-      ]
+      'EMAIL_CONTACT' => "info@yourfaceborg.com",
+'CARD_BGCOLORS' => ['#e74c57','#e74c3c','#d35400','#f39c12','#f1c40f','#2ecc71','#1abc9c','#3498db','#8e44ad','#512e5f','#154360','#1d3347','#000205','#424344','#FFFFFF'],
+      'CARD_COLORS' => ['#000000','#000000','#000000','#000000','#000000','#000000','#000000','#000000','#000000','#FFFFFF','#FFFFFF','#FFFFFF','#FFFFFF','#FFFFFF','#000000']
+       ]      
     
     ];  
 
