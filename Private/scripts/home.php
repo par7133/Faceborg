@@ -1000,7 +1000,7 @@
         s=s.replaceAll("<br><br><br>","<br><br>");
         ii = s.indexOf('<div id="mydivzero">&nbsp;</div>');
         $(this).get(0).innerHTML=s.substr(ii+32);
-        alert(document.getElementsByClassName("blog-entry")[y].innerHTML);
+        //alert(document.getElementsByClassName("blog-entry")[y].innerHTML);
       } else {
         $(this).get(0).innerHTML="";
       }
