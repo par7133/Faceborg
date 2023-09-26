@@ -533,7 +533,7 @@
         ?>
                      <?PHP if ($orifileExt === "txt"):?>      
                           <div class="blog-content"> 
-                           <div class="blog-entry" onclick="selectVideo(<?php echo($iEntry-1);?>);" style="background-color:<?PHP echo($aBGColors[$iEntry-1]);?>;color:<?PHP echo($aColors[$iEntry-1]);?>;width:100%;margin-bottom:0px;">  
+                           <div class="blog-entry" onclick="selectVideo(<?php echo($iEntry-1);?>);" style="background-color:<?PHP echo($aBGColors[$iEntry-1]);?>;color:<?PHP echo($aColors[$iEntry-1]);?>;width:100%;margin-bottom:0px;background-image:url('/res/dogborg.png'); background-repeat: no-repeat; background-size: 75px; background-position: bottom 10px right 10px;">  
                                  <?PHP if (APP_PAGINATION): ?>
                                       <?php if ($iCurEntry===1 && $iEntry===1): ?>
                                        <!--<img class="blog-img" src="/res/arrow-leftd.png" style="float:left;">-->
