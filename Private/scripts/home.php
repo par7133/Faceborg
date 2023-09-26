@@ -467,7 +467,8 @@
    $iEntry = 2;   
    $totLinks = 0;
    $aLinks=[];
-   $aColors =['#FFFFFF','lightgreen','lightblue','orange','pink','pink','orange','lightblue','lightgreen','#FFFFFF','#FFFFFF','lightgreen','lightblue','orange','pink'];
+   $aBGColors = APP_CARD_BGCOLORS;
+   $aColors = APP_CARD_COLORS;
    $pattern = $BLOG_PATH . DIRECTORY_SEPARATOR . "*.txt";
    $aFilePaths = glob($pattern);   
    if (empty($aFilePaths)): ?>
@@ -532,7 +533,7 @@
         ?>
                      <?PHP if ($orifileExt === "txt"):?>      
                           <div class="blog-content"> 
-                           <div class="blog-entry" onclick="selectVideo(<?php echo($iEntry-1);?>);" style="background-color:<?PHP echo($aColors[$iEntry-1]);?>;width:100%;margin-bottom:0px;">  
+                           <div class="blog-entry" onclick="selectVideo(<?php echo($iEntry-1);?>);" style="background-color:<?PHP echo($aBGColors[$iEntry-1]);?>;color:<?PHP echo($aColors[$iEntry-1]);?>;width:100%;margin-bottom:0px;">  
                                  <?PHP if (APP_PAGINATION): ?>
                                       <?php if ($iCurEntry===1 && $iEntry===1): ?>
                                        <!--<img class="blog-img" src="/res/arrow-leftd.png" style="float:left;">-->
@@ -984,15 +985,22 @@
         //  $(this).css("height", "");
         //}
         $(this).css("height", window.innerHeight);
-        $(this).css("width", "60%");
+        if (window.innerWidth < 800) {
+          $(this).css("width", "90%");
+          $(this).css("max-width", "90%");
+          $(this).css("font-size", "12px");
+        } else {
+          $(this).css("width", "60%");
+          $(this).css("max-width", "60%");
+          $(this).css("font-size", "1.5vw");
+        }  
         $(this).css("padding", "20px");
-        $(this).css("font-size", "1.5vw");
         $(this).css("font-weight", "900");
         s=document.getElementsByClassName("blog-entry")[y].innerHTML;
         s=s.replaceAll("<br><br><br>","<br><br>");
         ii = s.indexOf('<div id="mydivzero">&nbsp;</div>');
         $(this).get(0).innerHTML=s.substr(ii+32);
-        //alert(document.getElementsByClassName("blog-entry")[y].innerHTML);
+        alert(document.getElementsByClassName("blog-entry")[y].innerHTML);
       } else {
         $(this).get(0).innerHTML="";
       }
