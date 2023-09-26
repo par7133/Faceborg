@@ -533,7 +533,7 @@
         ?>
                      <?PHP if ($orifileExt === "txt"):?>      
                           <div class="blog-content"> 
-                           <div class="blog-entry" onclick="selectVideo(<?php echo($iEntry-1);?>);" style="background-color:<?PHP echo($aBGColors[$iEntry-1]);?>;color:<?PHP echo($aColors[$iEntry-1]);?>;width:100%;margin-bottom:0px;background-image:url('/res/dogborg.png'); background-repeat: no-repeat; background-size: 75px; background-position: bottom 10px right 10px;">  
+                            <div class="blog-entry" onclick="selectVideo(<?php echo($iEntry-1);?>);" style="background-color:<?PHP echo($aBGColors[$iEntry-1]);?>;color:<?PHP echo($aColors[$iEntry-1]);?>;width:100%;margin-bottom:0px;background-image:url('/res/dogborg.png'); background-repeat: no-repeat; background-size: 75px; background-position: top 10px right 10px;">  
                                  <?PHP if (APP_PAGINATION): ?>
                                       <?php if ($iCurEntry===1 && $iEntry===1): ?>
                                        <!--<img class="blog-img" src="/res/arrow-leftd.png" style="float:left;">-->
@@ -567,7 +567,7 @@
 
     <?PHP for($i=$iEntry;$i<=APP_BLOG_MAX_POSTS;$i++):?>
             <div class="blog-content"> 
-             <div class="blog-entry" style="border:0px;background:darkgray;">  
+             <div class="blog-entry" myindex="<?PHP echo($iEntry);?>" style="border:0px;">  
                  &nbsp;
              </div> 
             </div>   
@@ -575,14 +575,14 @@
    
    <?PHP if ((APP_BLOG_MAX_POSTS / 3) > (int)(APP_BLOG_MAX_POSTS / 3)): ?>
             <div class="blog-content"> 
-             <div class="blog-entry" style="border:0px;background:darkgray;">  
+             <div class="blog-entry" style="border:0px;">  
                  &nbsp;
              </div> 
             </div>   
    
            <?PHP if (((APP_BLOG_MAX_POSTS+1) / 3) > (int)((APP_BLOG_MAX_POSTS+1) / 3)): ?>
                  <div class="blog-content"> 
-                  <div class="blog-entry" style="border:0px;background:darkgray;">  
+                  <div class="blog-entry" style="border:0px;">  
                       &nbsp;
                   </div> 
                  </div>   
@@ -1090,6 +1090,27 @@
     $(".blog-entry").css("width", (picw-2) + "px");
     $(".blog-img").css("height", (pich-4) + "px");   
     $(".blog-img").css("width", ((picw-4)/3) + "px");   
+    if (w > 900) {
+      ii = 1;
+      $(".blog-entry").each(function() {
+        if (ii <= <?PHP echo($totLinks); ?> || ii === 15) {
+          $(this).css("background-image", "url('/res/dogborg.png')");
+          $(this).css("background-repeat", "no-repeat");
+          ss = $(this).get(0).innerHTML.trim();
+          if (ii === 15 && ss === "&nbsp;") {
+            $(this).css("background-image", "url('/res/dogborge.png')");
+            $(this).css("background-size", "80%");
+          } else {
+            $(this).css("background-size", "50px");
+          }
+        } else {
+          $(this).css("background-image", "");
+        }  
+        ii++;
+      });
+    } else {  
+      $(".blog-entry").css("background-image", "");
+    }
     // ---
     
     $("#passworddisplay").css("top", parseInt(h-$("#passworddisplay").height()-100)+"px");
