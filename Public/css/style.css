@@ -94,13 +94,13 @@ body {
   color:#000000;
 }
 .blog-entry {
-  width:100%;
-  margin-bottom:0px;
-  min-height:80px;
-  background-color: #f9f9f9;
-  border:1px solid black;
+  width: 100%;
+  margin-bottom: 0px;
+  min-height: 80px;
+  background-color: #dbdbdb;
+  border: 1px solid black;
   /*padding:30px;*/
-  text-align:left;
+  text-align: left;
   font-size: 9px;
   padding:15px;
   white-space: initial;
