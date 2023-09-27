@@ -472,12 +472,15 @@
    $pattern = $BLOG_PATH . DIRECTORY_SEPARATOR . "*.txt";
    $aFilePaths = glob($pattern);   
    if (empty($aFilePaths)): ?>
-            <div class="blog-content"> 
-              <div class="blog-entry">    
-                <?PHP echo(getResource0("Hello from 5 Mode", $lang));?>,<br>
+             <div class="blog-content"> 
+              <div class="blog-entry" style="background-color:#FFFFFF;">    
+                <br><br>
+                <?PHP echo(date("Ymd") . " " . date("Hi"));?><br><br><br>
+                <?PHP echo(getResource0("Hello from 5 Mode", $lang));?>,<br><br>
                 <?PHP echo(getResource0("This is just an example of blog entry", $lang));?>.
               </div> 
              </div>  
+          <?PHP $totLinks = 1; ?>
         <?PHP else: ?>
                 <?PHP
       $CUDOZ++;          
@@ -567,7 +570,7 @@
 
     <?PHP for($i=$iEntry;$i<=APP_BLOG_MAX_POSTS;$i++):?>
             <div class="blog-content"> 
-             <div class="blog-entry" myindex="<?PHP echo($iEntry);?>" style="border:0px;">  
+             <div class="blog-entry" style="border:0px;">  
                  &nbsp;
              </div> 
             </div>   
@@ -1093,6 +1096,29 @@
     if (w > 900) {
       ii = 1;
       $(".blog-entry").each(function() {
+
+        ss = $(this).get(0).innerHTML.trim();
+
+        if (ii <= <?PHP echo($totLinks); ?>) {
+          $(this).css("background-image", "url('/res/dogborg.png')");
+          $(this).css("background-repeat", "no-repeat");
+          $(this).css("background-position", "top 10px right 10px");
+          $(this).css("background-size", "50px");
+        } else if (ii > <?PHP echo($totLinks); ?> && ii < 15) {
+          $(this).css("background-image", "url('/res/break.png')");
+          $(this).css("background-repeat", "repeat");
+          $(this).css("background-position", "");
+          //$(this).css("background-size", "28%");
+        } else if (ii === 15 && ss === "&nbsp;") {
+          $(this).css("background-image", "url('/res/dogborge.png')");
+          $(this).css("background-repeat", "no-repeat");
+          $(this).css("background-position", "");
+          $(this).css("background-size", "80%");
+        } else {
+          $(this).css("background-image", "");
+        }
+    
+        /*
         if (ii <= <?PHP echo($totLinks); ?> || ii === 15) {
           $(this).css("background-image", "url('/res/dogborg.png')");
           $(this).css("background-repeat", "no-repeat");
@@ -1100,12 +1126,17 @@
           if (ii === 15 && ss === "&nbsp;") {
             $(this).css("background-image", "url('/res/dogborge.png')");
             $(this).css("background-size", "80%");
+          } else if (ss === "&nbsp;") {
+            $(this).css("background-image", "url('/res/break.png')");
+            $(this).css("background-size", "100%");
           } else {
+            $(this).css("background-image", "url('/res/dogborge.png')");
             $(this).css("background-size", "50px");
           }
         } else {
           $(this).css("background-image", "");
-        }  
+        }*/ 
+        
         ii++;
       });
     } else {  
