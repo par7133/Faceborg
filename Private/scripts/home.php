@@ -988,7 +988,7 @@
         //  $(this).css("height", "");
         //}
         $(this).css("height", window.innerHeight);
-        if (window.innerWidth < 800) {
+        if (window.innerWidth < 1000) {
           $(this).css("width", "90%");
           $(this).css("max-width", "90%");
           $(this).css("font-size", "12px");
