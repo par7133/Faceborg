@@ -14,12 +14,12 @@ Faceborg is released under GPLv3 license, it is supplied AS-IS and we do not tak
 	   
 First step, use the password box and salt fields to create the hash to insert in the config file. Remember to manually set there also the salt value.<br>
 	   
-As you are going to run Puzzleu in the PHP process context, using a limited web server or phpfpm user, you must follow some simple directives for an optimal first setup:<br>
+As you are going to run Faceborg in the PHP process context, using a limited web server or phpfpm user, you must follow some simple directives for an optimal first setup:<br>
 
 <ol>
 <li>Check the write permissions of your "data" folder in your web app Private path; and set its path in the config file.</li>
 <li>Set the default Locale.</li>
-<li>Set FILE_MAX_SIZE (remember that some PHP settings could limit the upload behaviour of Puzzleu too)</li>
+<li>Set FILE_MAX_SIZE (remember that some PHP settings could limit the upload behaviour of Faceborg too)</li>
 <li>Set BLOG_MAX_POSTS to limit the number of visible posts in the blog.</li>
 <li>Set PAGINATION true or false to give more public access to your data.</li>
 </ol> 
