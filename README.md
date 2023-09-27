@@ -8,7 +8,7 @@
 
 Hello and welcome to Faceborg!<br>
 	  
-Faceborg is a light, simple, software on premise to build and own your colorful blog.<br>
+Faceborg is a light, simple, software on premise to build and own your blog by colorful cards.<br>
 	   
 Faceborg is released under GPLv3 license, it is supplied AS-IS and we do not take any responsibility for its misusage.<br>
 	   
