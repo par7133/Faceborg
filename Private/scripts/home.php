@@ -541,12 +541,12 @@
                                       <?php if ($iCurEntry===1 && $iEntry===1): ?>
                                        <!--<img class="blog-img" src="/res/arrow-leftd.png" style="float:left;">-->
                                        <?php elseif ($iEntry===1 && $iCurEntry>1): ?>  
-                                       <div style="float:right;position: absolute;left:+1%;"><a href="/<?PHP echo(AVATAR_NAME); ?>/?blogSP=<?PHP echo($prevPost);?>" onclick="event.stopPropagation();"><img class="blog-img" src="/res/arrow-left.png" style="float:left;"></a></div>
+                                       <div style="float:right;position: absolute;left:+1%; opacity:0.85;"><a href="/<?PHP echo(AVATAR_NAME); ?>/?blogSP=<?PHP echo($prevPost);?>" onclick="event.stopPropagation();"><img class="blog-img" src="/res/arrow-left.png" style="float:left;"></a></div>
                                        <?php endif; ?>
                                        <?php if ($iEntry===APP_BLOG_MAX_POSTS && $iCurEntry===$totPost): ?>
                                        <!--<img class="blog-img" src="/res/arrow-rightd.png" style="float:right;">-->
                                        <?php elseif ($iEntry===APP_BLOG_MAX_POSTS): ?>
-                                       <div style="float:right;position: absolute;left:+92%;"><a href="/<?PHP echo(AVATAR_NAME); ?>/?blogSP=<?PHP echo($nextPost);?>" onclick="event.stopPropagation();"><img class="blog-img" src="/res/arrow-right.png" style="float:right;"></a></div>
+                                       <div style="float:right;position: absolute;left:+92%; opacity:0.85;"><a href="/<?PHP echo(AVATAR_NAME); ?>/?blogSP=<?PHP echo($nextPost);?>" onclick="event.stopPropagation();"><img class="blog-img" src="/res/arrow-right.png" style="float:right;"></a></div>
                                        <?php endif; ?>
                                        <div id="mydivzero">&nbsp;</div>
                                      <?PHP
@@ -995,7 +995,7 @@
         } else {
           $(this).css("width", "60%");
           $(this).css("max-width", "60%");
-          $(this).css("font-size", "1.5vw");
+          $(this).css("font-size", "15px");
         }  
         $(this).css("padding", "20px");
         $(this).css("font-weight", "900");
