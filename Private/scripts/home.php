@@ -536,7 +536,7 @@
         ?>
                      <?PHP if ($orifileExt === "txt"):?>      
                           <div class="blog-content"> 
-                            <div class="blog-entry" onclick="selectVideo(<?php echo($iEntry-1);?>);" style="background-color:<?PHP echo($aBGColors[$iEntry-1]);?>;color:<?PHP echo($aColors[$iEntry-1]);?>;width:100%;margin-bottom:0px;background-image:url('/res/dogborg.png'); background-repeat: no-repeat; background-size: 75px; background-position: top 10px right 10px;">  
+                            <div class="blog-entry" onclick="selectVideo(<?php echo($iEntry-1);?>);" style="background-color:<?PHP echo($aBGColors[$iEntry-1]);?>;color:<?PHP echo($aColors[$iEntry-1]);?>;">  
                                  <?PHP if (APP_PAGINATION): ?>
                                       <?php if ($iCurEntry===1 && $iEntry===1): ?>
                                        <!--<img class="blog-img" src="/res/arrow-leftd.png" style="float:left;">-->
@@ -1077,11 +1077,18 @@
 
 <script>
 
+ function showEntries() {
+   $(".blog-content").css("border", "1px solid darkgray");
+   $(".blog-entry").css("visibility", "visible");
+ }  
+
  function setContentPos() {
+   
     h = window.innerHeight;
     w = window.innerWidth;
     pich = parseInt((h - $(".header").height() - 80) / 3);
     // picw = parseInt(w / 5); ori
+    
     iimg = parseInt(<?PHP echo(APP_BLOG_MAX_POSTS / 3); ?>);
     if ((<?PHP echo(APP_BLOG_MAX_POSTS / 3); ?>) > parseInt(<?PHP echo(APP_BLOG_MAX_POSTS / 3); ?>)) {
       iimg++;
@@ -1105,10 +1112,13 @@
           $(this).css("background-position", "top 10px right 10px");
           $(this).css("background-size", "50px");
         } else if (ii > <?PHP echo($totLinks); ?> && ii < 15) {
-          $(this).css("background-image", "url('/res/break.png')");
-          $(this).css("background-repeat", "repeat");
-          $(this).css("background-position", "");
-          //$(this).css("background-size", "28%");
+          //$(this).css("background-image", "url('/res/break.png')");
+          //$(this).css("background-repeat", "repeat");
+          //$(this).css("background-position", "");
+          $(this).css("background-image", "none");
+          $(this).css("background", "transparent");
+          $(this).css("background-repeat", "");
+          $(this).css("background-position", "");          
         } else if (ii === 15 && ss === "&nbsp;") {
           $(this).css("background-image", "url('/res/dogborge.png')");
           $(this).css("background-repeat", "no-repeat");
@@ -1118,30 +1128,14 @@
           $(this).css("background-image", "");
         }
     
-        /*
-        if (ii <= <?PHP echo($totLinks); ?> || ii === 15) {
-          $(this).css("background-image", "url('/res/dogborg.png')");
-          $(this).css("background-repeat", "no-repeat");
-          ss = $(this).get(0).innerHTML.trim();
-          if (ii === 15 && ss === "&nbsp;") {
-            $(this).css("background-image", "url('/res/dogborge.png')");
-            $(this).css("background-size", "80%");
-          } else if (ss === "&nbsp;") {
-            $(this).css("background-image", "url('/res/break.png')");
-            $(this).css("background-size", "100%");
-          } else {
-            $(this).css("background-image", "url('/res/dogborge.png')");
-            $(this).css("background-size", "50px");
-          }
-        } else {
-          $(this).css("background-image", "");
-        }*/ 
-        
         ii++;
       });
     } else {  
       $(".blog-entry").css("background-image", "");
     }
+    
+    setTimeout("showEntries()", 1200); 
+    
     // ---
     
     $("#passworddisplay").css("top", parseInt(h-$("#passworddisplay").height()-100)+"px");
