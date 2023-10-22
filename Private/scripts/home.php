@@ -548,14 +548,14 @@
                                        <?php elseif ($iEntry===APP_BLOG_MAX_POSTS): ?>
                                        <div style="float:right;position: absolute;left:+92%; opacity:0.85;"><a href="/<?PHP echo(AVATAR_NAME); ?>/?blogSP=<?PHP echo($nextPost);?>" onclick="event.stopPropagation();"><img class="blog-img" src="/res/arrow-right.png" style="float:right;"></a></div>
                                        <?php endif; ?>
-                                       <div id="mydivzero">&nbsp;</div>
-                                     <?PHP
-              $s=file_get_contents($filePath); 
-              echo($date."&nbsp;".$time."<br><br><br>".enableEmoticons(HTMLencode($s, true)));
-              ?>
                                 <?PHP else: ?>
                                        &nbsp;
                                  <?PHP endif; ?>      
+                                      <div id="mydivzero">&nbsp;</div>
+                                     <?PHP
+              $s=file_get_contents($filePath); 
+              echo($date."&nbsp;".$time."<br><br><br>".enableEmoticons(HTMLencode($s, true)));
+              ?>                                       
                            </div> 
                           </div>   
                           <?PHP $aLinks[] = "/img?av=" . AVATAR_NAME . "&pic=" . $orifilename; ?>
