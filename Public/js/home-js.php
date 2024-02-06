@@ -299,7 +299,7 @@ $("input#files").on("change", function(e) {
   frmUpload.submit();
 });
 
-function setContentPos() {                    
+function setContentPos2() {                    
   h=parseInt(window.innerHeight);
   w=parseInt(window.innerWidth);
 
@@ -311,11 +311,15 @@ function setContentPos() {
   //$("#picavatar").css("left", ((w - 255) / 2) + "px");
   $("#picavatar").css("display", "inline");
  <?PHP else: ?> 
-  if (window.innerWidth<800) {
+  if (window.innerWidth<500) {
+    $("#header").css("display", "none");
+    $("#headerMob").css("display", "inline");    
     $("#cudoz").css("display", "none");
   } else {
+    $("#header").css("display", "inline");
+    $("#headerMob").css("display", "none");    
     $("#cudoz").css("display", "inline");
-  }  
+  }   
   <?PHP endif; ?>
   $(".dragover").css("height", h + "px");
   $(".dragover").css("width", w + "px");
@@ -340,7 +344,7 @@ function setFooterPos() {
 
 window.addEventListener("load", function() {
 
-  setTimeout("setContentPos()", 500);
+  setTimeout("setContentPos2()", 500);
   setTimeout("setFooterPos()", 1000);
 
   <?PHP if ($CURRENT_VIEW ==ADMIN_VIEW): ?>
@@ -358,7 +362,7 @@ window.addEventListener("load", function() {
 
 window.addEventListener("resize", function() {
 
-  setTimeout("setContentPos()", 500);
+  setTimeout("setContentPos2()", 500);
   setTimeout("setFooterPos()", 1000);
 
 }, true);
