@@ -311,7 +311,7 @@ function setContentPos2() {
   //$("#picavatar").css("left", ((w - 255) / 2) + "px");
   $("#picavatar").css("display", "inline");
  <?PHP else: ?> 
-  if (window.innerWidth<500) {
+  if (window.innerWidth<800) {
     $("#header").css("display", "none");
     $("#headerMob").css("display", "inline");    
     $("#cudoz").css("display", "none");
