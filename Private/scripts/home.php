@@ -382,15 +382,15 @@
  function renderCorrectPag () {
       if (window.innerWidth <= 500) {
          if (<?PHP echo($MAXP) ?>!=<?PHP echo(APP_BLOG_ULTRATHIN_MAX_POSTS) ?>) {
-             window.open("http://<?php echo $_SERVER['HTTP_HOST'];?>/?maxp=<?PHP echo(APP_BLOG_ULTRATHIN_MAX_POSTS) ?>","_self");
+             window.open("http://<?php echo $_SERVER['HTTP_HOST'];?>/<?php echo(AVATAR_NAME);?>/?maxp=<?PHP echo(APP_BLOG_ULTRATHIN_MAX_POSTS) ?>","_self");
           }   
       } else if (window.innerWidth <= 1050) {
           if (<?PHP echo($MAXP) ?>!=<?PHP echo(APP_BLOG_THIN_MAX_POSTS) ?>) {
-             window.open("http://<?php echo $_SERVER['HTTP_HOST'];?>/?maxp=<?PHP echo(APP_BLOG_THIN_MAX_POSTS) ?>","_self");
+             window.open("http://<?php echo $_SERVER['HTTP_HOST'];?>/<?php echo(AVATAR_NAME);?>/?maxp=<?PHP echo(APP_BLOG_THIN_MAX_POSTS) ?>","_self");
           }  
       } else {
           if (<?PHP echo($MAXP) ?>!=<?PHP echo(APP_BLOG_MAX_POSTS) ?>) {
-             window.open("http://<?php echo $_SERVER['HTTP_HOST'];?>/?maxp=<?PHP echo(APP_BLOG_MAX_POSTS) ?>","_self");
+             window.open("http://<?php echo $_SERVER['HTTP_HOST'];?>/<?php echo(AVATAR_NAME);?>/?maxp=<?PHP echo(APP_BLOG_MAX_POSTS) ?>","_self");
           }  
       }
  }
@@ -481,7 +481,7 @@
  </form>   
            
   <div id="footerCont">&nbsp;</div>
-  <div id="footer"><span style="background:#FFFFFF; opacity:0.7;">&nbsp;&nbsp;<a class="aaa" href="https://5mode.com/dd.html">Disclaimer</a>.&nbsp;&nbsp;A <a href="http://5mode.com" class="aaa">5 Mode</a> project and <a href="http://demo.5mode.com" class="aaa">WYSIWYG</a> system. <?PHP echo(getResource0("Some rights reserved", $lang));?></span></div>
+  <div id="footer"><span style="background:#FFFFFF; opacity:0.7;">&nbsp;&nbsp;<a class="aaa" href="dd.html">Disclaimer</a>.&nbsp;&nbsp;A <a href="http://5mode.com" class="aaa">5 Mode</a> project and <a href="http://demo.5mode.com" class="aaa">WYSIWYG</a> system. <?PHP echo(getResource0("Some rights reserved", $lang));?></span></div>
            
 <?PHP else: ?>          
 
@@ -1029,7 +1029,7 @@
            
  <?PHP endif; ?>           
 
-<script src="/js/home-js.php?hl=<?PHP echo($lang);?>&av=<?PHP echo(AVATAR_NAME);?>&cv=<?PHP echo($CURRENT_VIEW);?>&cu=<?PHP echo($CUDOZ);?>" type="text/javascript"></script>
+<script src="/static/js/home-js.php?hl=<?PHP echo($lang);?>&av=<?PHP echo(AVATAR_NAME);?>&cv=<?PHP echo($CURRENT_VIEW);?>&cu=<?PHP echo($CUDOZ);?>" type="text/javascript"></script>
 
 <?PHP if ($CURRENT_VIEW == PUBLIC_VIEW): ?> 
 <script>
