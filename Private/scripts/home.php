@@ -627,7 +627,7 @@
 
     <?PHP for($i=$iEntry;$i<=$MAXP;$i++):?>
             <div class="blog-content"> 
-             <div class="blog-entry" style="border:0px;">  
+             <div class="blog-entry" style="background-color:<?PHP echo($aBGColors[$i-1]);?>;color:<?PHP echo($aColors[$i-1]);?>;border:0px;">  
                  &nbsp;
              </div> 
             </div>   
@@ -635,14 +635,14 @@
    
    <?PHP if (($MAXP / 3) > (int)($MAXP / 3)): ?>
             <div class="blog-content"> 
-             <div class="blog-entry" style="border:0px;">  
+             <div class="blog-entry" style="background-color:<?PHP echo($aBGColors[$iEntry-1]);?>;color:<?PHP echo($aColors[$iEntry-1]);?>;border:0px;">  
                  &nbsp;
              </div> 
             </div>   
    
            <?PHP if ((($MAXP+1) / 3) > (int)(($MAXP+1) / 3)): ?>
                  <div class="blog-content"> 
-                  <div class="blog-entry" style="border:0px;">  
+                  <div class="blog-entry" style="background-color:<?PHP echo($aBGColors[$iEntry-1]);?>;color:<?PHP echo($aColors[$iEntry-1]);?>;border:0px;">  
                       &nbsp;
                   </div> 
                  </div>   
@@ -1157,7 +1157,7 @@
     $(".blog-entry").css("width", (picw-2) + "px");
     $(".blog-img").css("height", (pich-4) + "px");   
     $(".blog-img").css("width", ((picw-4)/3) + "px");   
-    if (w > 900) {
+    if (w > 0) {
       ii = 1;
       $(".blog-entry").each(function() {
 
@@ -1168,15 +1168,13 @@
           $(this).css("background-repeat", "no-repeat");
           $(this).css("background-position", "top 10px right 10px");
           $(this).css("background-size", "50px");
-        } else if (ii > <?PHP echo($totLinks); ?> && ii < 15) {
-          //$(this).css("background-image", "url('/res/break.png')");
-          //$(this).css("background-repeat", "repeat");
-          //$(this).css("background-position", "");
-          $(this).css("background-image", "none");
-          $(this).css("background", "transparent");
-          $(this).css("background-repeat", "");
-          $(this).css("background-position", "");          
-        } else if (ii === 15 && ss === "&nbsp;") {
+        } else if (ii > <?PHP echo($totLinks); ?> && ii < <?PHP echo($MAXP); ?>) {
+          $(this).css("background-image", "url('/res/dogborg.png')");
+          $(this).css("background-repeat", "no-repeat");
+          $(this).css("background-position", "top 10px right 10px");
+          $(this).css("background-size", "50px");
+        } else if (ii === <?PHP echo($MAXP); ?> && ss === "&nbsp;") {
+          $(this).css("background-color", "#FFFFFF");
           $(this).css("background-image", "url('/res/dogborge.png')");
           $(this).css("background-repeat", "no-repeat");
           $(this).css("background-position", "");
