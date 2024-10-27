@@ -1,7 +1,5 @@
 <p align="center">
-    <a href="https://p.uzzle.eu">
-        <img src="/Public/res/AFlogo.png" width="188" title="Puzzleu" alt="Puzzleu">
-    </a>
+      <img src="./Public/res/AFlogo.png" width="188" title="Faceborg" alt="Faceborg">
 </p>
 
 # Faceborg
