@@ -22,7 +22,7 @@ As you are going to run Faceborg in the PHP process context, using a limited web
 <li>Set PAGINATION true or false to give more public access to your data.</li>
 </ol> 
 
-You can access your avatar by http://yourdomain.com/<your_avatar>. Login with the password for the admin view. Drag-n-drop all your resources in the browser window. .txt files feed your blog, .png and .jpg your gallery, etc.<br>
+You can access your avatar by http://yourservername.xyz/<your_avatar>. Login with the password for the admin view. Drag-n-drop all your resources in the browser window. .txt files feed your blog, .png and .jpg your gallery, etc.<br>
 
 For any need of software additions, plugins and improvements please write to <a href="mailto:info@numode.eu">info@numode.eu</a>  
 
